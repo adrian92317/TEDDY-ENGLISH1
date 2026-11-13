@@ -1,0 +1,1555 @@
+{
+  "id": "leccion-01-colores",
+  "titulo": "Colores y lugares",
+  "icono": "pelota-de-colores",
+  "duracionMinutos": 15,
+  "palabras": {
+    "colores": [
+      "red",
+      "blue",
+      "yellow",
+      "green"
+    ],
+    "lugares": [
+      "in",
+      "on",
+      "under"
+    ],
+    "objetos": [
+      "ball",
+      "bed",
+      "box"
+    ]
+  },
+  "nombreNino": "Adriel",
+  "escena": {
+    "fondo": "cuarto-de-nino",
+    "objetos": {
+      "bed": {
+        "tipo": "cama",
+        "fijo": true
+      },
+      "box": {
+        "tipo": "caja-de-juguetes",
+        "fijo": true
+      },
+      "teddy": {
+        "tipo": "personaje",
+        "fijo": false
+      },
+      "ball_red": {
+        "tipo": "pelota",
+        "color": "red",
+        "arrastrable": true
+      },
+      "ball_blue": {
+        "tipo": "pelota",
+        "color": "blue",
+        "arrastrable": true
+      },
+      "ball_yellow": {
+        "tipo": "pelota",
+        "color": "yellow",
+        "arrastrable": true
+      },
+      "ball_green": {
+        "tipo": "pelota",
+        "color": "green",
+        "arrastrable": true
+      }
+    },
+    "zonas": {
+      "in": {
+        "descripcion": "dentro de la caja",
+        "ancla": "box"
+      },
+      "on": {
+        "descripcion": "encima de la cama",
+        "ancla": "bed"
+      },
+      "under": {
+        "descripcion": "debajo de la cama",
+        "ancla": "bed"
+      },
+      "floor": {
+        "descripcion": "piso libre (posicion de inicio)"
+      }
+    },
+    "escondites": {
+      "ball_red": "under",
+      "ball_blue": "on",
+      "ball_yellow": "in",
+      "ball_green": "floor"
+    }
+  },
+  "global": {
+    "elogiosIngles": [
+      "en_p_great",
+      "en_p_yes",
+      "en_p_awesome",
+      "en_p_gotit",
+      "en_p_adriel"
+    ],
+    "elogiosEspanol": [
+      "es_p_muy_bien",
+      "es_p_genial"
+    ],
+    "elogioRapido": {
+      "menosDeMs": 3000,
+      "clips": [
+        "en_p_fast"
+      ]
+    },
+    "ayuda": [
+      "es_ayuda"
+    ],
+    "inactividad": {
+      "a8s": [
+        "es_te_ayudo"
+      ],
+      "a30s": [
+        "es_sigues_ahi"
+      ]
+    }
+  },
+  "pasos": [
+    {
+      "id": "saludo",
+      "tipo": "say",
+      "clips": [
+        "es_hola",
+        "en_hello_adriel",
+        "es_hoy"
+      ]
+    },
+    {
+      "id": "sentimiento",
+      "tipo": "feeling",
+      "pregunta": [
+        "es_sientes"
+      ],
+      "opciones": [
+        {
+          "valor": "bien",
+          "icono": "carita-feliz",
+          "respuesta": [
+            "es_sientes_bien"
+          ]
+        },
+        {
+          "valor": "regular",
+          "icono": "carita-neutra",
+          "respuesta": [
+            "es_sientes_regular"
+          ]
+        },
+        {
+          "valor": "mal",
+          "icono": "carita-triste",
+          "respuesta": [
+            "es_sientes_mal"
+          ],
+          "efecto": "leccionCorta"
+        }
+      ]
+    },
+    {
+      "id": "cuento",
+      "tipo": "story",
+      "paneles": [
+        {
+          "clips": [
+            "es_cuento_1"
+          ],
+          "estadoEscena": "pelotasEnElPiso"
+        },
+        {
+          "clips": [
+            "es_cuento_2"
+          ],
+          "animacion": "pelotasSeEsconden",
+          "estadoEscena": "escondidas"
+        },
+        {
+          "clips": [
+            "es_ayudame",
+            "en_the_red_ball"
+          ],
+          "tocar": "ball_red",
+          "alAcertar": [
+            "x_red"
+          ],
+          "alFallar": [
+            "es_ese_es",
+            "w_{tocado}",
+            "es_buscamos",
+            "w_red"
+          ]
+        },
+        {
+          "clips": [
+            "es_ayudame",
+            "en_the_blue_ball"
+          ],
+          "tocar": "ball_blue",
+          "alAcertar": [
+            "x_blue"
+          ],
+          "alFallar": [
+            "es_ese_es",
+            "w_{tocado}",
+            "es_buscamos",
+            "w_blue"
+          ]
+        },
+        {
+          "clips": [
+            "es_ayudame",
+            "en_the_yellow_ball"
+          ],
+          "tocar": "ball_yellow",
+          "alAcertar": [
+            "x_yellow"
+          ],
+          "alFallar": [
+            "es_ese_es",
+            "w_{tocado}",
+            "es_buscamos",
+            "w_yellow"
+          ]
+        },
+        {
+          "clips": [
+            "es_ayudame",
+            "en_the_green_ball"
+          ],
+          "tocar": "ball_green",
+          "alAcertar": [
+            "x_green"
+          ],
+          "alFallar": [
+            "es_ese_es",
+            "w_{tocado}",
+            "es_buscamos",
+            "w_green"
+          ]
+        },
+        {
+          "clips": [
+            "es_cuento_fin"
+          ],
+          "animacion": "pelotasVuelvenAlPiso"
+        }
+      ]
+    },
+    {
+      "id": "explorar",
+      "tipo": "explore",
+      "intro": [
+        "es_explora"
+      ],
+      "objetivos": {
+        "ball_red": [
+          "x_red",
+          "g_red"
+        ],
+        "ball_blue": [
+          "x_blue",
+          "g_blue"
+        ],
+        "ball_yellow": [
+          "x_yellow",
+          "g_yellow"
+        ],
+        "ball_green": [
+          "x_green",
+          "g_green"
+        ]
+      },
+      "terminaCuando": "todosTocados",
+      "final": [
+        "es_explora_listo"
+      ]
+    },
+    {
+      "id": "juego_rapido",
+      "tipo": "findGame",
+      "calificado": true,
+      "intro": [
+        "es_juego_rapido"
+      ],
+      "rondas": 6,
+      "colores": [
+        "red",
+        "blue",
+        "yellow",
+        "green"
+      ],
+      "sinRepetirSeguido": true,
+      "instruccion": [
+        "en_touch_{color}"
+      ],
+      "acierto": [
+        "{elogioIngles}",
+        "x_{color}"
+      ],
+      "error": [
+        "es_ese_es",
+        "w_{tocado}",
+        "es_buscamos",
+        "w_{color}",
+        "es_intenta"
+      ],
+      "escalera": [
+        {
+          "nivel": 1,
+          "usar": "error"
+        },
+        {
+          "nivel": 2,
+          "clips": [
+            "es_mira_aqui"
+          ],
+          "efecto": "brillarZonaDelObjetivo"
+        },
+        {
+          "nivel": 3,
+          "clips": [
+            "es_escucha_bien",
+            "s_{color}"
+          ],
+          "efecto": "latirObjetivo"
+        },
+        {
+          "nivel": 4,
+          "clips": [
+            "es_ahora_tu",
+            "en_touch_{color}"
+          ]
+        },
+        {
+          "nivel": 5,
+          "clips": [
+            "es_mas_tarde"
+          ],
+          "efecto": "enviarARepaso"
+        }
+      ]
+    },
+    {
+      "id": "teddy_dice",
+      "tipo": "tpr",
+      "intro": [
+        "es_teddy_dice_intro"
+      ],
+      "rondas": [
+        {
+          "clip": "en_teddy_says_jump",
+          "animacionTeddy": "saltar"
+        },
+        {
+          "clip": "en_teddy_says_clap",
+          "animacionTeddy": "aplaudir"
+        },
+        {
+          "clip": "en_teddy_says_nose",
+          "animacionTeddy": "tocarNariz"
+        },
+        {
+          "clip": "en_teddy_says_turn",
+          "animacionTeddy": "darVuelta"
+        }
+      ],
+      "boton": "listo-verde",
+      "esperaMinimaMs": 2000,
+      "final": [
+        "es_teddy_dice_listo"
+      ]
+    },
+    {
+      "id": "demo_lugares",
+      "tipo": "demo",
+      "intro": [
+        "es_mira_teddy"
+      ],
+      "demos": [
+        {
+          "lugar": "in",
+          "mover": "ball_red->in",
+          "clips": [
+            "es_dentro_de_la_caja",
+            "x_in",
+            "en_ball_in"
+          ]
+        },
+        {
+          "lugar": "on",
+          "mover": "ball_red->on",
+          "clips": [
+            "es_encima_de_la_cama",
+            "x_on",
+            "en_ball_on"
+          ]
+        },
+        {
+          "lugar": "under",
+          "mover": "ball_red->under",
+          "clips": [
+            "es_debajo_de_la_cama",
+            "x_under",
+            "en_ball_under"
+          ]
+        }
+      ],
+      "final": [
+        "es_toca_para_ver"
+      ],
+      "repetibleTocandoZona": true
+    },
+    {
+      "id": "arrastrar",
+      "tipo": "dragTask",
+      "calificado": true,
+      "intro": [
+        "es_arrastra_intro"
+      ],
+      "rondas": [
+        {
+          "pelotas": [
+            "red"
+          ],
+          "color": "red",
+          "lugar": "in"
+        },
+        {
+          "pelotas": [
+            "red"
+          ],
+          "color": "red",
+          "lugar": "on"
+        },
+        {
+          "pelotas": [
+            "red"
+          ],
+          "color": "red",
+          "lugar": "under"
+        },
+        {
+          "antes": [
+            "es_mas_pelotas"
+          ],
+          "pelotas": [
+            "red",
+            "blue",
+            "yellow",
+            "green"
+          ],
+          "color": "blue",
+          "lugar": "under"
+        },
+        {
+          "pelotas": [
+            "red",
+            "blue",
+            "yellow",
+            "green"
+          ],
+          "color": "yellow",
+          "lugar": "in"
+        },
+        {
+          "pelotas": [
+            "red",
+            "blue",
+            "yellow",
+            "green"
+          ],
+          "color": "green",
+          "lugar": "on"
+        }
+      ],
+      "instruccion": [
+        "en_put_{color}_{lugar}"
+      ],
+      "acierto": [
+        "{elogioIngles}",
+        "en_is_{color}_{lugar}"
+      ],
+      "errores": {
+        "pelotaEquivocada": [
+          "es_casi",
+          "es_esa_es_la_pelota",
+          "w_{colorTocado}",
+          "es_queremos_la",
+          "w_{color}"
+        ],
+        "lugarEquivocado": [
+          "es_casi",
+          "es_la_pusiste",
+          "w_{lugarPuesto}",
+          "es_queremos",
+          "w_{lugar}",
+          "g_{lugar}"
+        ],
+        "ambos": [
+          "es_casi",
+          "es_esa_es_la_pelota",
+          "w_{colorTocado}",
+          "es_queremos_la",
+          "w_{color}"
+        ]
+      },
+      "escalera": [
+        {
+          "nivel": 1,
+          "usar": "errores"
+        },
+        {
+          "nivel": 2,
+          "clips": [
+            "es_pista_lugar"
+          ],
+          "efecto": "brillarZonaDestino"
+        },
+        {
+          "nivel": 3,
+          "clips": [
+            "es_juntos"
+          ],
+          "efecto": "teddyHaceCasoFacil",
+          "nota": "Teddy mueve OTRA pelota al mismo lugar, dice en_ball_{lugar} y la regresa"
+        },
+        {
+          "nivel": 4,
+          "clips": [
+            "es_ahora_tu",
+            "en_put_{color}_{lugar}"
+          ]
+        },
+        {
+          "nivel": 5,
+          "clips": [
+            "es_mas_tarde"
+          ],
+          "efecto": "enviarARepaso"
+        }
+      ],
+      "accesibilidad": "Si arrastrar falla 2 veces seguidas, permitir tocar pelota y luego tocar el lugar"
+    },
+    {
+      "id": "donde_esta",
+      "tipo": "whereQuestion",
+      "calificado": true,
+      "intro": [
+        "es_donde_intro"
+      ],
+      "rondas": [
+        {
+          "color": "green",
+          "lugar": "under"
+        },
+        {
+          "color": "yellow",
+          "lugar": "on"
+        },
+        {
+          "color": "blue",
+          "lugar": "in"
+        }
+      ],
+      "instruccion": [
+        "en_where_{color}"
+      ],
+      "opciones": [
+        "in",
+        "on",
+        "under"
+      ],
+      "audioOpcion": "x_{opcion}",
+      "pictogramas": {
+        "in": "pelota-dentro-de-caja",
+        "on": "pelota-encima-de-cama",
+        "under": "pelota-debajo-de-cama"
+      },
+      "acierto": [
+        "{elogioIngles}",
+        "en_is_{color}_{lugar}"
+      ],
+      "error": [
+        "es_eso_es",
+        "w_{opcionElegida}",
+        "es_mira_bien"
+      ],
+      "escalera": [
+        {
+          "nivel": 1,
+          "usar": "error"
+        },
+        {
+          "nivel": 2,
+          "clips": [
+            "es_pista_lugar"
+          ],
+          "efecto": "brillarPelota"
+        },
+        {
+          "nivel": 3,
+          "clips": [
+            "es_juntos",
+            "en_is_{color}_{lugar}"
+          ],
+          "efecto": "senalarOpcionCorrecta"
+        },
+        {
+          "nivel": 4,
+          "clips": [
+            "es_ahora_tu",
+            "en_where_{color}"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "escondidas",
+      "tipo": "hideSeek",
+      "calificado": false,
+      "intro": [
+        "es_escondidas_intro"
+      ],
+      "rondas": [
+        "under",
+        "in",
+        "on"
+      ],
+      "instruccion": [
+        "en_where_teddy"
+      ],
+      "acierto": [
+        "es_encontraste",
+        "en_teddy_{lugar}"
+      ],
+      "error": [
+        "es_no_estoy_ahi"
+      ],
+      "escalera": [
+        {
+          "nivel": 1,
+          "usar": "error"
+        },
+        {
+          "nivel": 2,
+          "clips": [
+            "es_pista_lugar"
+          ],
+          "efecto": "asomarOrejasTeddy"
+        }
+      ]
+    },
+    {
+      "id": "hablar",
+      "tipo": "speak",
+      "calificado": false,
+      "intro": [
+        "es_hablar_intro"
+      ],
+      "palabras": [
+        "red",
+        "blue",
+        "yellow",
+        "green"
+      ],
+      "instruccion": [
+        "en_say_{palabra}"
+      ],
+      "aceptar": {
+        "red": [
+          "red",
+          "read",
+          "wed",
+          "rad",
+          "ret"
+        ],
+        "blue": [
+          "blue",
+          "blew",
+          "blu",
+          "boo"
+        ],
+        "yellow": [
+          "yellow",
+          "yelo",
+          "jello",
+          "hello"
+        ],
+        "green": [
+          "green",
+          "grin",
+          "grean",
+          "queen"
+        ]
+      },
+      "acierto": [
+        "{elogioIngles}",
+        "x_{palabra}"
+      ],
+      "reintento": [
+        "es_buen_intento",
+        "s_{palabra}"
+      ],
+      "intentosMaximos": 2,
+      "siFalla": {
+        "clips": [
+          "es_toca_en_vez"
+        ],
+        "tarea": "tocarPelota"
+      },
+      "sinMicrofono": [
+        "es_no_mic"
+      ]
+    },
+    {
+      "id": "corrige_a_teddy",
+      "tipo": "correctTeddy",
+      "calificado": true,
+      "intro": [
+        "es_corrige_intro"
+      ],
+      "rondas": [
+        {
+          "escena": {
+            "color": "blue",
+            "lugar": "under"
+          },
+          "teddyDice": "en_is_blue_on",
+          "verdad": false
+        },
+        {
+          "escena": {
+            "color": "red",
+            "lugar": "in"
+          },
+          "teddyDice": "en_is_red_in",
+          "verdad": true
+        },
+        {
+          "escena": {
+            "color": "yellow",
+            "lugar": "on"
+          },
+          "teddyDice": "en_is_yellow_under",
+          "verdad": false
+        }
+      ],
+      "botones": {
+        "bien": "carita-feliz",
+        "mal": "carita-triste"
+      },
+      "siVerdadYAcierta": [
+        "es_teddy_bien"
+      ],
+      "siMentiraYLaDescubre": [
+        "es_me_equivoque"
+      ],
+      "luegoArrastrarAlLugarReal": true,
+      "alArreglar": [
+        "es_gracias_profe",
+        "en_is_{color}_{lugar}"
+      ],
+      "siNoLaDescubre": [
+        "es_seguro"
+      ]
+    },
+    {
+      "id": "dificultad",
+      "tipo": "chooseDifficulty",
+      "pregunta": [
+        "es_mas_dificil"
+      ],
+      "opciones": [
+        {
+          "valor": "si",
+          "icono": "estrella",
+          "respuesta": [
+            "es_reto"
+          ],
+          "efecto": "rondaExtra",
+          "rondaExtra": {
+            "tipo": "dragTask",
+            "pelotas": [
+              "red",
+              "blue",
+              "yellow",
+              "green"
+            ],
+            "color": "red",
+            "lugar": "under",
+            "luego": {
+              "color": "green",
+              "lugar": "in"
+            },
+            "nota": "dos instrucciones seguidas"
+          }
+        },
+        {
+          "valor": "no",
+          "icono": "carita-feliz",
+          "respuesta": [
+            "es_aun_no"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "canto",
+      "tipo": "chant",
+      "intro": [
+        "es_canto_intro"
+      ],
+      "bpm": 96,
+      "lineas": [
+        {
+          "clip": "en_chant_1",
+          "tamborEn": "red"
+        },
+        {
+          "clip": "en_chant_2",
+          "tamborEn": "blue"
+        },
+        {
+          "clip": "en_chant_3",
+          "tamborEn": "yellow"
+        },
+        {
+          "clip": "en_chant_4",
+          "tamborEn": "green"
+        },
+        {
+          "clip": "en_chant_5"
+        },
+        {
+          "clip": "en_chant_6"
+        }
+      ],
+      "puntuacion": "ninguna (solo diversion)",
+      "final": [
+        "es_canto_fin"
+      ]
+    },
+    {
+      "id": "mision",
+      "tipo": "mission",
+      "clips": [
+        "es_mision",
+        "en_find_red",
+        "es_mision_foto",
+        "es_mision_adulto",
+        "es_mision_luego"
+      ],
+      "color": "red",
+      "foto": "opcional, se guarda solo en el telefono",
+      "confirmaAdulto": true,
+      "sePuedeHacerDespues": true
+    },
+    {
+      "id": "cierre",
+      "tipo": "close",
+      "clips": [
+        "es_toca_tarjeta"
+      ],
+      "estrellas": {
+        "3": ">=90% de aciertos al primer intento",
+        "2": ">=75%",
+        "1": "leccion completada"
+      },
+      "trofeo": "100% al primer intento en los pasos calificados",
+      "clipsEstrellas": [
+        "es_estrellas"
+      ],
+      "clipsTrofeo": [
+        "es_trofeo"
+      ],
+      "despedida": [
+        "en_bye",
+        "es_adios"
+      ]
+    }
+  ],
+  "clips": {
+    "w_red": {
+      "lang": "en",
+      "text": "red"
+    },
+    "w_blue": {
+      "lang": "en",
+      "text": "blue"
+    },
+    "w_yellow": {
+      "lang": "en",
+      "text": "yellow"
+    },
+    "w_green": {
+      "lang": "en",
+      "text": "green"
+    },
+    "w_in": {
+      "lang": "en",
+      "text": "in"
+    },
+    "w_on": {
+      "lang": "en",
+      "text": "on"
+    },
+    "w_under": {
+      "lang": "en",
+      "text": "under"
+    },
+    "w_ball": {
+      "lang": "en",
+      "text": "ball"
+    },
+    "w_bed": {
+      "lang": "en",
+      "text": "bed"
+    },
+    "w_box": {
+      "lang": "en",
+      "text": "box"
+    },
+    "x_red": {
+      "lang": "en",
+      "text": "Red!"
+    },
+    "x_blue": {
+      "lang": "en",
+      "text": "Blue!"
+    },
+    "x_yellow": {
+      "lang": "en",
+      "text": "Yellow!"
+    },
+    "x_green": {
+      "lang": "en",
+      "text": "Green!"
+    },
+    "x_in": {
+      "lang": "en",
+      "text": "In!"
+    },
+    "x_on": {
+      "lang": "en",
+      "text": "On!"
+    },
+    "x_under": {
+      "lang": "en",
+      "text": "Under!"
+    },
+    "s_red": {
+      "lang": "en",
+      "text": "red",
+      "speed": 0.7
+    },
+    "s_blue": {
+      "lang": "en",
+      "text": "blue",
+      "speed": 0.7
+    },
+    "s_yellow": {
+      "lang": "en",
+      "text": "yellow",
+      "speed": 0.7
+    },
+    "s_green": {
+      "lang": "en",
+      "text": "green",
+      "speed": 0.7
+    },
+    "s_in": {
+      "lang": "en",
+      "text": "in",
+      "speed": 0.7
+    },
+    "s_on": {
+      "lang": "en",
+      "text": "on",
+      "speed": 0.7
+    },
+    "s_under": {
+      "lang": "en",
+      "text": "under",
+      "speed": 0.7
+    },
+    "g_red": {
+      "lang": "es",
+      "text": "rojo"
+    },
+    "g_blue": {
+      "lang": "es",
+      "text": "azul"
+    },
+    "g_yellow": {
+      "lang": "es",
+      "text": "amarillo"
+    },
+    "g_green": {
+      "lang": "es",
+      "text": "verde"
+    },
+    "g_in": {
+      "lang": "es",
+      "text": "dentro"
+    },
+    "g_on": {
+      "lang": "es",
+      "text": "encima"
+    },
+    "g_under": {
+      "lang": "es",
+      "text": "debajo"
+    },
+    "en_the_red_ball": {
+      "lang": "en",
+      "text": "The red ball."
+    },
+    "en_touch_red": {
+      "lang": "en",
+      "text": "Touch the red ball!"
+    },
+    "en_where_red": {
+      "lang": "en",
+      "text": "Where is the red ball?"
+    },
+    "en_say_red": {
+      "lang": "en",
+      "text": "Say: red!"
+    },
+    "en_put_red_in": {
+      "lang": "en",
+      "text": "Put the red ball in the box."
+    },
+    "en_is_red_in": {
+      "lang": "en",
+      "text": "The red ball is in the box."
+    },
+    "en_put_red_on": {
+      "lang": "en",
+      "text": "Put the red ball on the bed."
+    },
+    "en_is_red_on": {
+      "lang": "en",
+      "text": "The red ball is on the bed."
+    },
+    "en_put_red_under": {
+      "lang": "en",
+      "text": "Put the red ball under the bed."
+    },
+    "en_is_red_under": {
+      "lang": "en",
+      "text": "The red ball is under the bed."
+    },
+    "en_the_blue_ball": {
+      "lang": "en",
+      "text": "The blue ball."
+    },
+    "en_touch_blue": {
+      "lang": "en",
+      "text": "Touch the blue ball!"
+    },
+    "en_where_blue": {
+      "lang": "en",
+      "text": "Where is the blue ball?"
+    },
+    "en_say_blue": {
+      "lang": "en",
+      "text": "Say: blue!"
+    },
+    "en_put_blue_in": {
+      "lang": "en",
+      "text": "Put the blue ball in the box."
+    },
+    "en_is_blue_in": {
+      "lang": "en",
+      "text": "The blue ball is in the box."
+    },
+    "en_put_blue_on": {
+      "lang": "en",
+      "text": "Put the blue ball on the bed."
+    },
+    "en_is_blue_on": {
+      "lang": "en",
+      "text": "The blue ball is on the bed."
+    },
+    "en_put_blue_under": {
+      "lang": "en",
+      "text": "Put the blue ball under the bed."
+    },
+    "en_is_blue_under": {
+      "lang": "en",
+      "text": "The blue ball is under the bed."
+    },
+    "en_the_yellow_ball": {
+      "lang": "en",
+      "text": "The yellow ball."
+    },
+    "en_touch_yellow": {
+      "lang": "en",
+      "text": "Touch the yellow ball!"
+    },
+    "en_where_yellow": {
+      "lang": "en",
+      "text": "Where is the yellow ball?"
+    },
+    "en_say_yellow": {
+      "lang": "en",
+      "text": "Say: yellow!"
+    },
+    "en_put_yellow_in": {
+      "lang": "en",
+      "text": "Put the yellow ball in the box."
+    },
+    "en_is_yellow_in": {
+      "lang": "en",
+      "text": "The yellow ball is in the box."
+    },
+    "en_put_yellow_on": {
+      "lang": "en",
+      "text": "Put the yellow ball on the bed."
+    },
+    "en_is_yellow_on": {
+      "lang": "en",
+      "text": "The yellow ball is on the bed."
+    },
+    "en_put_yellow_under": {
+      "lang": "en",
+      "text": "Put the yellow ball under the bed."
+    },
+    "en_is_yellow_under": {
+      "lang": "en",
+      "text": "The yellow ball is under the bed."
+    },
+    "en_the_green_ball": {
+      "lang": "en",
+      "text": "The green ball."
+    },
+    "en_touch_green": {
+      "lang": "en",
+      "text": "Touch the green ball!"
+    },
+    "en_where_green": {
+      "lang": "en",
+      "text": "Where is the green ball?"
+    },
+    "en_say_green": {
+      "lang": "en",
+      "text": "Say: green!"
+    },
+    "en_put_green_in": {
+      "lang": "en",
+      "text": "Put the green ball in the box."
+    },
+    "en_is_green_in": {
+      "lang": "en",
+      "text": "The green ball is in the box."
+    },
+    "en_put_green_on": {
+      "lang": "en",
+      "text": "Put the green ball on the bed."
+    },
+    "en_is_green_on": {
+      "lang": "en",
+      "text": "The green ball is on the bed."
+    },
+    "en_put_green_under": {
+      "lang": "en",
+      "text": "Put the green ball under the bed."
+    },
+    "en_is_green_under": {
+      "lang": "en",
+      "text": "The green ball is under the bed."
+    },
+    "en_ball_in": {
+      "lang": "en",
+      "text": "The ball is in the box."
+    },
+    "en_teddy_in": {
+      "lang": "en",
+      "text": "Teddy is in the box!"
+    },
+    "en_ball_on": {
+      "lang": "en",
+      "text": "The ball is on the bed."
+    },
+    "en_teddy_on": {
+      "lang": "en",
+      "text": "Teddy is on the bed!"
+    },
+    "en_ball_under": {
+      "lang": "en",
+      "text": "The ball is under the bed."
+    },
+    "en_teddy_under": {
+      "lang": "en",
+      "text": "Teddy is under the bed!"
+    },
+    "en_where_teddy": {
+      "lang": "en",
+      "text": "Where is Teddy?"
+    },
+    "en_teddy_says_jump": {
+      "lang": "en",
+      "text": "Teddy says: jump!"
+    },
+    "en_teddy_says_clap": {
+      "lang": "en",
+      "text": "Teddy says: clap your hands!"
+    },
+    "en_teddy_says_nose": {
+      "lang": "en",
+      "text": "Teddy says: touch your nose!"
+    },
+    "en_teddy_says_turn": {
+      "lang": "en",
+      "text": "Teddy says: turn around!"
+    },
+    "en_hello_adriel": {
+      "lang": "en",
+      "text": "Hello, Adriel!"
+    },
+    "en_bye": {
+      "lang": "en",
+      "text": "Bye-bye, Adriel! See you soon!"
+    },
+    "en_find_red": {
+      "lang": "en",
+      "text": "Find something red!"
+    },
+    "en_p_great": {
+      "lang": "en",
+      "text": "Great job!"
+    },
+    "en_p_yes": {
+      "lang": "en",
+      "text": "Yes!"
+    },
+    "en_p_awesome": {
+      "lang": "en",
+      "text": "Awesome!"
+    },
+    "en_p_gotit": {
+      "lang": "en",
+      "text": "You got it!"
+    },
+    "en_p_adriel": {
+      "lang": "en",
+      "text": "Well done, Adriel!"
+    },
+    "en_p_fast": {
+      "lang": "en",
+      "text": "So fast!"
+    },
+    "en_chant_1": {
+      "lang": "en",
+      "text": "Red, red, red. The ball is red!"
+    },
+    "en_chant_2": {
+      "lang": "en",
+      "text": "Blue, blue, blue. The ball is blue!"
+    },
+    "en_chant_3": {
+      "lang": "en",
+      "text": "Yellow, yellow, yellow. The ball is yellow!"
+    },
+    "en_chant_4": {
+      "lang": "en",
+      "text": "Green, green, green. The ball is green!"
+    },
+    "en_chant_5": {
+      "lang": "en",
+      "text": "In, on, under. Where is my ball?"
+    },
+    "en_chant_6": {
+      "lang": "en",
+      "text": "In the box, on the bed, under the bed. Yay!"
+    },
+    "es_hola": {
+      "lang": "es",
+      "text": "¡Hola, Adriel! Soy Teddy, tu amigo."
+    },
+    "es_hoy": {
+      "lang": "es",
+      "text": "Hoy vamos a jugar con colores en inglés."
+    },
+    "es_sientes": {
+      "lang": "es",
+      "text": "Antes de empezar, ¿cómo te sientes hoy? Toca una carita."
+    },
+    "es_sientes_bien": {
+      "lang": "es",
+      "text": "¡Qué bueno! Entonces vamos con toda la energía."
+    },
+    "es_sientes_regular": {
+      "lang": "es",
+      "text": "Está bien. Vamos despacito y juntos."
+    },
+    "es_sientes_mal": {
+      "lang": "es",
+      "text": "Gracias por contarme. Hoy haremos algo cortito y divertido."
+    },
+    "es_cuento_1": {
+      "lang": "es",
+      "text": "Escucha este cuento. Teddy tenía cuatro pelotas de colores."
+    },
+    "es_cuento_2": {
+      "lang": "es",
+      "text": "Pero un día, ¡las pelotas se escondieron por todo el cuarto!"
+    },
+    "es_ayudame": {
+      "lang": "es",
+      "text": "¿Me ayudas a encontrarla? Toca"
+    },
+    "es_cuento_fin": {
+      "lang": "es",
+      "text": "¡Las encontramos todas! Gracias, Adriel."
+    },
+    "es_explora": {
+      "lang": "es",
+      "text": "Toca cada pelota y escucha su color en inglés."
+    },
+    "es_explora_listo": {
+      "lang": "es",
+      "text": "¡Ya conoces los cuatro colores!"
+    },
+    "es_juego_rapido": {
+      "lang": "es",
+      "text": "Juguemos un juego rápido. Yo digo un color y tú tocas la pelota."
+    },
+    "es_ese_es": {
+      "lang": "es",
+      "text": "Mmm, ese es"
+    },
+    "es_buscamos": {
+      "lang": "es",
+      "text": "Estamos buscando"
+    },
+    "es_intenta": {
+      "lang": "es",
+      "text": "Intenta otra vez."
+    },
+    "es_mira_aqui": {
+      "lang": "es",
+      "text": "Mira, está por aquí."
+    },
+    "es_escucha_bien": {
+      "lang": "es",
+      "text": "Escucha bien, despacito."
+    },
+    "es_teddy_dice_intro": {
+      "lang": "es",
+      "text": "Ahora, ¡a moverse! Cuando Teddy diga algo, hazlo con tu cuerpo y luego toca el botón verde."
+    },
+    "es_teddy_dice_listo": {
+      "lang": "es",
+      "text": "¡Qué bien te mueves!"
+    },
+    "es_mira_teddy": {
+      "lang": "es",
+      "text": "Mira lo que hace Teddy con la pelota."
+    },
+    "es_dentro_de_la_caja": {
+      "lang": "es",
+      "text": "Dentro de la caja se dice"
+    },
+    "es_encima_de_la_cama": {
+      "lang": "es",
+      "text": "Encima de la cama se dice"
+    },
+    "es_debajo_de_la_cama": {
+      "lang": "es",
+      "text": "Debajo de la cama se dice"
+    },
+    "es_toca_para_ver": {
+      "lang": "es",
+      "text": "Toca cada lugar para verlo otra vez. Cuando estés listo, toca la flecha."
+    },
+    "es_arrastra_intro": {
+      "lang": "es",
+      "text": "Ahora tú mueves las pelotas. Escucha y arrástrala con el dedo."
+    },
+    "es_casi": {
+      "lang": "es",
+      "text": "¡Casi!"
+    },
+    "es_esa_es_la_pelota": {
+      "lang": "es",
+      "text": "Esa es la pelota"
+    },
+    "es_queremos_la": {
+      "lang": "es",
+      "text": "Queremos la pelota"
+    },
+    "es_la_pusiste": {
+      "lang": "es",
+      "text": "La pusiste"
+    },
+    "es_queremos": {
+      "lang": "es",
+      "text": "Queremos"
+    },
+    "es_pista_lugar": {
+      "lang": "es",
+      "text": "Mira dónde brilla."
+    },
+    "es_juntos": {
+      "lang": "es",
+      "text": "Hagámoslo juntos. Mira cómo lo hago yo."
+    },
+    "es_ahora_tu": {
+      "lang": "es",
+      "text": "Ahora tú."
+    },
+    "es_mas_tarde": {
+      "lang": "es",
+      "text": "No pasa nada. Lo practicamos otra vez más tarde."
+    },
+    "es_mas_pelotas": {
+      "lang": "es",
+      "text": "¡Lo estás haciendo muy bien! Ahora con más pelotas."
+    },
+    "es_donde_intro": {
+      "lang": "es",
+      "text": "Ahora te pregunto yo. Mira dónde está la pelota y toca el dibujo correcto."
+    },
+    "es_eso_es": {
+      "lang": "es",
+      "text": "Mmm, eso es"
+    },
+    "es_mira_bien": {
+      "lang": "es",
+      "text": "Mira bien dónde está."
+    },
+    "es_escondidas_intro": {
+      "lang": "es",
+      "text": "¡A jugar a las escondidas! Cierra los ojos. Teddy se va a esconder."
+    },
+    "es_encontraste": {
+      "lang": "es",
+      "text": "¡Me encontraste!"
+    },
+    "es_no_estoy_ahi": {
+      "lang": "es",
+      "text": "Ahí no estoy. ¡Sigue buscando!"
+    },
+    "es_hablar_intro": {
+      "lang": "es",
+      "text": "Ahora te toca hablar. Escucha, y cuando el micrófono se ponga verde, repite en voz alta."
+    },
+    "es_buen_intento": {
+      "lang": "es",
+      "text": "¡Buen intento! Escucha otra vez."
+    },
+    "es_toca_en_vez": {
+      "lang": "es",
+      "text": "¡Muy bien por intentarlo! Ahora tócala."
+    },
+    "es_no_mic": {
+      "lang": "es",
+      "text": "Hoy no te escucho bien. Sigamos tocando."
+    },
+    "es_corrige_intro": {
+      "lang": "es",
+      "text": "A veces Teddy se equivoca. Si digo algo mal, toca la carita triste. Si está bien, toca la feliz."
+    },
+    "es_teddy_bien": {
+      "lang": "es",
+      "text": "¡Sí! Teddy dijo bien."
+    },
+    "es_me_equivoque": {
+      "lang": "es",
+      "text": "¡Uy, me equivoqué! Ayúdame: pon la pelota donde estaba."
+    },
+    "es_seguro": {
+      "lang": "es",
+      "text": "Mmm, mira otra vez. ¿Seguro?"
+    },
+    "es_gracias_profe": {
+      "lang": "es",
+      "text": "¡Gracias, profe Adriel!"
+    },
+    "es_mas_dificil": {
+      "lang": "es",
+      "text": "¿Quieres uno más difícil?"
+    },
+    "es_aun_no": {
+      "lang": "es",
+      "text": "Está bien, seguimos así."
+    },
+    "es_reto": {
+      "lang": "es",
+      "text": "¡Reto aceptado!"
+    },
+    "es_canto_intro": {
+      "lang": "es",
+      "text": "¡Hora de cantar! Toca el tambor cada vez que escuches un color."
+    },
+    "es_canto_fin": {
+      "lang": "es",
+      "text": "¡Qué buen ritmo!"
+    },
+    "es_mision": {
+      "lang": "es",
+      "text": "Tengo una misión para ti en tu casa."
+    },
+    "es_mision_foto": {
+      "lang": "es",
+      "text": "Cuando lo encuentres, pídele a un adulto que le tome una foto."
+    },
+    "es_mision_adulto": {
+      "lang": "es",
+      "text": "Adulto: si la foto está bien, toca el pulgar arriba."
+    },
+    "es_mision_luego": {
+      "lang": "es",
+      "text": "También puedes hacerla más tarde."
+    },
+    "es_toca_tarjeta": {
+      "lang": "es",
+      "text": "Toca la tarjeta de la lección para terminarla."
+    },
+    "es_estrellas": {
+      "lang": "es",
+      "text": "¡Ganaste tus estrellas!"
+    },
+    "es_trofeo": {
+      "lang": "es",
+      "text": "¡Y lo hiciste perfecto! Te ganaste un trofeo. Tócalo para reclamarlo."
+    },
+    "es_adios": {
+      "lang": "es",
+      "text": "¡Nos vemos pronto!"
+    },
+    "es_ayuda": {
+      "lang": "es",
+      "text": "¡Aquí estoy! Escucha otra vez."
+    },
+    "es_te_ayudo": {
+      "lang": "es",
+      "text": "¿Quieres que te ayude? Toca la mano."
+    },
+    "es_sigues_ahi": {
+      "lang": "es",
+      "text": "¿Sigues ahí? Toca la pantalla cuando quieras seguir."
+    },
+    "es_p_muy_bien": {
+      "lang": "es",
+      "text": "¡Muy bien!"
+    },
+    "es_p_genial": {
+      "lang": "es",
+      "text": "¡Genial!"
+    },
+    "es_p_rapido": {
+      "lang": "es",
+      "text": "¡Y fue rapidísimo!"
+    }
+  }
+}

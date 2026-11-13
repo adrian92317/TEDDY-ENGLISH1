@@ -1,0 +1,334 @@
+{
+  "id": "primer-arranque",
+  "seMuestra": "una sola vez, antes de la leccion 1; repetible desde el panel de padres",
+  "pasos": [
+    {
+      "id": "hola",
+      "tipo": "say",
+      "clips": [
+        "ob_hola"
+      ]
+    },
+    {
+      "id": "nombre",
+      "tipo": "choice",
+      "pregunta": [
+        "ob_nombre"
+      ],
+      "opciones": [
+        {
+          "valor": "si",
+          "icono": "pulgar-arriba",
+          "respuesta": [
+            "ob_nombre_si"
+          ]
+        },
+        {
+          "valor": "no",
+          "icono": "pulgar-abajo",
+          "respuesta": [
+            "ob_nombre_no"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "opinion",
+      "tipo": "choice",
+      "pregunta": [
+        "ob_opinion"
+      ],
+      "opciones": [
+        {
+          "valor": "feliz",
+          "icono": "carita-feliz",
+          "respuesta": [
+            "ob_opinion_feliz"
+          ]
+        },
+        {
+          "valor": "neutra",
+          "icono": "carita-neutra",
+          "respuesta": [
+            "ob_opinion_neutra"
+          ]
+        },
+        {
+          "valor": "aburrido",
+          "icono": "carita-ojos-en-blanco",
+          "respuesta": [
+            "ob_opinion_aburrido"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "color_bufanda",
+      "tipo": "choice",
+      "pregunta": [
+        "ob_color"
+      ],
+      "opciones": [
+        {
+          "valor": "roja",
+          "icono": "bufanda-roja"
+        },
+        {
+          "valor": "azul",
+          "icono": "bufanda-azul"
+        },
+        {
+          "valor": "amarilla",
+          "icono": "bufanda-amarilla"
+        },
+        {
+          "valor": "verde",
+          "icono": "bufanda-verde"
+        }
+      ],
+      "respuestaComun": [
+        "ob_color_listo"
+      ],
+      "guardaEn": "perfil.colorBufandaTeddy"
+    },
+    {
+      "id": "ritmo",
+      "tipo": "choice",
+      "pregunta": [
+        "ob_ritmo"
+      ],
+      "opciones": [
+        {
+          "valor": "lento",
+          "icono": "tortuga",
+          "respuesta": [
+            "ob_ritmo_lento"
+          ]
+        },
+        {
+          "valor": "rapido",
+          "icono": "conejo",
+          "respuesta": [
+            "ob_ritmo_rapido"
+          ]
+        }
+      ],
+      "guardaEn": "perfil.ritmo",
+      "efecto": "lento = pausas 1.5x y velocidad de audio 0.9; rapido = pausas normales"
+    },
+    {
+      "id": "controles_intro",
+      "tipo": "say",
+      "clips": [
+        "ob_controles"
+      ]
+    },
+    {
+      "id": "tocar",
+      "tipo": "tapTarget",
+      "objetivo": "estrella",
+      "clips": [
+        "ob_tocar"
+      ],
+      "acierto": [
+        "ob_tocar_bien"
+      ],
+      "efecto": "la estrella explota en confeti"
+    },
+    {
+      "id": "arrastrar",
+      "tipo": "dragTarget",
+      "objeto": "pelota",
+      "destino": "caja",
+      "clips": [
+        "ob_arrastrar"
+      ],
+      "acierto": [
+        "ob_arrastrar_bien"
+      ],
+      "ayuda": [
+        "ob_arrastrar_ayuda"
+      ],
+      "efectoAyuda": "mano animada que arrastra"
+    },
+    {
+      "id": "mano",
+      "tipo": "tapControl",
+      "control": "ayuda",
+      "clips": [
+        "ob_mano"
+      ],
+      "acierto": [
+        "ob_mano_bien"
+      ]
+    },
+    {
+      "id": "check",
+      "tipo": "tapControl",
+      "control": "listo",
+      "clips": [
+        "ob_check"
+      ],
+      "acierto": [
+        "ob_check_bien"
+      ]
+    },
+    {
+      "id": "microfono",
+      "tipo": "micTest",
+      "clips": [
+        "ob_mic"
+      ],
+      "pedir": [
+        "ob_mic_di",
+        "en_hello"
+      ],
+      "aceptar": [
+        "hello",
+        "hi",
+        "jello",
+        "yellow"
+      ],
+      "acierto": [
+        "ob_mic_bien"
+      ],
+      "siFalla": [
+        "ob_mic_no"
+      ],
+      "intentosMaximos": 2,
+      "guardaEn": "perfil.microfono"
+    },
+    {
+      "id": "trofeo",
+      "tipo": "trophy",
+      "clips": [
+        "ob_trofeo"
+      ],
+      "alReclamar": [
+        "ob_trofeo_bien"
+      ]
+    }
+  ],
+  "clips": {
+    "ob_hola": {
+      "lang": "es",
+      "text": "¡Hola! Soy Teddy. Voy a ser tu amigo para aprender inglés."
+    },
+    "ob_nombre": {
+      "lang": "es",
+      "text": "Tengo tu nombre como Adriel. ¿Es correcto?"
+    },
+    "ob_nombre_si": {
+      "lang": "es",
+      "text": "¡Encantado de conocerte, Adriel!"
+    },
+    "ob_nombre_no": {
+      "lang": "es",
+      "text": "Ups. Pídele a un adulto que lo arregle en el panel de padres."
+    },
+    "ob_opinion": {
+      "lang": "es",
+      "text": "Voy a ser tu tutor. ¿Qué te parece?"
+    },
+    "ob_opinion_feliz": {
+      "lang": "es",
+      "text": "¡Yupi! Vamos a divertirnos mucho."
+    },
+    "ob_opinion_neutra": {
+      "lang": "es",
+      "text": "Está bien. Te prometo que va a ser divertido."
+    },
+    "ob_opinion_aburrido": {
+      "lang": "es",
+      "text": "Ay, intentaré no tomarlo personal. Me gusta tu honestidad, y voy a hacer que aprender conmigo sea divertido."
+    },
+    "ob_color": {
+      "lang": "es",
+      "text": "Elige de qué color quieres mi bufanda."
+    },
+    "ob_color_listo": {
+      "lang": "es",
+      "text": "¡Me encanta! Ahora soy tu Teddy."
+    },
+    "ob_ritmo": {
+      "lang": "es",
+      "text": "¿Prefieres aprender despacito como la tortuga, o rápido como el conejo?"
+    },
+    "ob_ritmo_lento": {
+      "lang": "es",
+      "text": "Despacito y con calma. ¡Perfecto!"
+    },
+    "ob_ritmo_rapido": {
+      "lang": "es",
+      "text": "¡Rápido como un conejo! ¡Vamos!"
+    },
+    "ob_controles": {
+      "lang": "es",
+      "text": "Ahora te enseño cómo jugar. Faltan tres cositas."
+    },
+    "ob_tocar": {
+      "lang": "es",
+      "text": "Primero: tocar. Toca la estrella."
+    },
+    "ob_tocar_bien": {
+      "lang": "es",
+      "text": "¡Así se hace! Faltan dos."
+    },
+    "ob_arrastrar": {
+      "lang": "es",
+      "text": "Segundo: arrastrar. Pon el dedo en la pelota y llévala a la caja."
+    },
+    "ob_arrastrar_bien": {
+      "lang": "es",
+      "text": "¡Perfecto! Falta una."
+    },
+    "ob_arrastrar_ayuda": {
+      "lang": "es",
+      "text": "Mira, así. Deja el dedo en la pantalla mientras la mueves."
+    },
+    "ob_mano": {
+      "lang": "es",
+      "text": "Si alguna vez necesitas ayuda, toca la mano. ¡Pruébala!"
+    },
+    "ob_mano_bien": {
+      "lang": "es",
+      "text": "¡Eso! Cuando toques la mano, yo te ayudo."
+    },
+    "ob_check": {
+      "lang": "es",
+      "text": "Y cuando termines algo, toca el botón verde. ¡Tócalo!"
+    },
+    "ob_check_bien": {
+      "lang": "es",
+      "text": "¡Listo! Ya sabes jugar."
+    },
+    "ob_mic": {
+      "lang": "es",
+      "text": "¿Quieres hablarme con el micrófono? Un adulto debe tocar Permitir."
+    },
+    "ob_mic_di": {
+      "lang": "es",
+      "text": "Di"
+    },
+    "ob_mic_bien": {
+      "lang": "es",
+      "text": "¡Te escuché! ¡Qué buena voz!"
+    },
+    "ob_mic_no": {
+      "lang": "es",
+      "text": "No te escucho por ahora, pero podemos jugar sin micrófono."
+    },
+    "ob_trofeo": {
+      "lang": "es",
+      "text": "Terminaste tu primera lección conmigo. Te ganaste un trofeo. Tócalo para reclamarlo."
+    },
+    "ob_trofeo_bien": {
+      "lang": "es",
+      "text": "¡Brillante! Vamos a la primera aventura."
+    },
+    "en_hello": {
+      "lang": "en",
+      "text": "Hello!"
+    }
+  }
+}
