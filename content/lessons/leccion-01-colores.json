@@ -110,7 +110,15 @@
       "a30s": [
         "es_sigues_ahi"
       ]
-    }
+    },
+    "leccionCorta": {
+      "omitirPasos": [
+        "teddy_dice",
+        "dificultad",
+        "canto"
+      ]
+    },
+    "escaleraAgotada": "si un paso tiene menos de 5 niveles, al agotarlos se anima la solucion y se sigue, como en el nivel 5"
   },
   "pasos": [
     {
@@ -758,6 +766,9 @@
       ],
       "siNoLaDescubre": [
         "es_seguro"
+      ],
+      "siVerdadYNoAcierta": [
+        "es_seguro"
       ]
     },
     {
@@ -807,6 +818,7 @@
         "es_canto_intro"
       ],
       "bpm": 96,
+      "ritmo": "las lineas suenan una tras otra sobre un pulso de fondo a bpm; el tambor suena cuando el nino lo toca",
       "lineas": [
         {
           "clip": "en_chant_1",
@@ -1369,7 +1381,7 @@
     },
     "es_toca_para_ver": {
       "lang": "es",
-      "text": "Toca cada lugar para verlo otra vez. Cuando estés listo, toca la flecha."
+      "text": "Toca cada lugar para verlo otra vez. Cuando estés listo, toca el botón verde."
     },
     "es_arrastra_intro": {
       "lang": "es",

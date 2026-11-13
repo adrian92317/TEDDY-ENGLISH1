@@ -98,7 +98,7 @@ Si el niño acierta en menos de `global.elogioRapido.menosDeMs` ms, se agrega `e
 | `speak` | Pide decir la palabra; usa el micrófono (sección 8). |
 | `correctTeddy` | Teddy describe la escena, a veces mal; el niño toca la carita feliz o triste. Si Teddy mintió, el niño arrastra la pelota al lugar real. |
 | `chooseDifficulty` | "¿Quieres uno más difícil?" Si dice sí, corre `rondaExtra`. |
-| `chant` | Reproduce las líneas al ritmo de `bpm`; un tambor grande suena al tocarlo. Sin puntaje. |
+| `chant` | Reproduce las líneas una tras otra sobre un pulso de fondo a `bpm` (las voces generadas no siguen un tempo exacto); un tambor grande suena al tocarlo. Sin puntaje. |
 | `mission` | Muestra la misión; foto opcional con `<input type="file" accept="image/*" capture="environment">`; un adulto confirma con 👍. Se puede dejar para después. |
 | `close` | Tarjeta, estrellas, trofeo y despedida. |
 | `tapTarget`, `dragTarget`, `tapControl`, `micTest`, `trophy` | Pasos del arranque con el mismo comportamiento que su nombre. |
@@ -118,6 +118,10 @@ Se aplica por ronda; el contador se reinicia en cada ronda nueva.
 5. **Error 5:** nivel 5: `es_mas_tarde`. La ronda se cierra **sin marcarla como fallo visible**, se anima la solución, y la palabra se agrega al repaso.
 
 El botón ✋ en cualquier momento repite la instrucción (`global.ayuda` + instrucción) y sube un nivel en la escalera, sin contar como error.
+
+Si la escalera de un paso tiene menos de 5 niveles (`donde_esta`, `escondidas`), al agotarlos se anima la solución y se sigue, como en el nivel 5.
+
+**Lección corta:** si el niño toca la carita triste (`efecto: leccionCorta`), se saltan los pasos de `global.leccionCorta.omitirPasos`.
 
 **Inactividad:** a los 8 s sin tocar, reproducir `global.inactividad.a8s` y hacer latir ✋; a los 30 s, `a30s` y pausar.
 
@@ -195,7 +199,7 @@ Al terminar cada fase: detenerse, resumir y esperar la aprobación del dueño.
 ## 13. Publicación
 
 - Repositorio privado `teddy-english` en GitHub. `.env` va en `.gitignore`.
-- Vercel importa el repositorio y despliega cada `push` a `main`. Los MP3 generados **sí** se suben al repositorio (en `public/audio/`), porque la app los necesita y la clave no viaja con ellos.
+- Vercel importa el repositorio y despliega cada `push` a `main`. Al terminar cada fase se abre un pull request hacia `main` y el dueño lo fusiona. Los MP3 generados **sí** se suben al repositorio (en `public/audio/`), porque la app los necesita y la clave no viaja con ellos.
 - En Android: abrir la URL en Chrome, menú ⋮ y "Instalar app" (o "Agregar a la pantalla principal").
 
 ## 14. Validación con Adriel
