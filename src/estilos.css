@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #fff4dc;
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.pantalla {
+  height: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 24px 16px calc(24px + env(safe-area-inset-bottom));
+}
+
+.teddy {
+  width: min(70vw, 280px);
+  height: auto;
+  transform-origin: 50% 90%;
+  animation: respirar 2.4s ease-in-out infinite;
+}
+
+.teddy.feliz {
+  animation: saltar 0.5s ease-out;
+}
+
+.boton-jugar {
+  width: 128px;
+  height: 128px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  animation: latir 1.2s ease-in-out infinite;
+}
+
+.boton-jugar:active {
+  transform: scale(0.92);
+  animation: none;
+}
+
+@keyframes respirar {
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+@keyframes saltar {
+  40% {
+    transform: translateY(-28px) scale(1.05);
+  }
+}
+
+@keyframes latir {
+  50% {
+    transform: scale(1.08);
+  }
+}
